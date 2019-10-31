@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <link href="css/index.css" type="text/css" rel="stylesheet">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>matrimonial.com</title>
+    </head>
+    <body>  
+        <table>        
+                <tr>
+                    <th> 
+                        <img src="logo.png" width="230" height="100" alt="ShadiBeyah"/> 
+                    </th>
+  <th style="padding-left: 50px">
+                <h1 style=" font-style: italic; font-size: 30px; color: darkgoldenrod;padding-right: 400px">
+                    <u> &nbsp;  Shadi Beyah &nbsp; </u></br> 
+                    <b style="font-size: 10px">A Place Where Hearts Meet!</b></h1>
+        </th>
+                </tr>
+                <tr>
+                    
+                           <center>     
+        <div class="topnav">
+  <a  href="home.html">Home</a>
+   <a  href="userprofile.html">My Profile</a>
+  <a href="lookingfor.html">Looking For</a>
+  <a  href="servicereg.html">Services</a>
+  <a class="active" href="contactreg.html">Contact</a>
+   <a href="searchreg.html">Search</a>
+  <a style="float:right" href="<%= "UserController?action=Logout"%>Logout</a>
+        </div></center><br><br><br>
+                    </td> </tr>
+            <tr>
+        
+               <td colspan="2" ><img src="cover_pic1.jpg" width="1345" height="500" alt="coverPhoto"/></td>
+            </tr>
+       </table>
+            
+       <table style="  position:absolute;right:60px;top:200px; 
+               background-color: maroon; margin-top: 0px" class="table1">
+            <tr>
+                <td style="padding-left: 50px; padding-right: 80px; padding-bottom: 100px; ">     
+                    <p><center> <h1 style="color:black"> <b>Login</b></h1></center>
+               <p> 
+               <form name="ShadiBeyahLogin" action="UserController" method="post" style="color:goldenrod">
+                   <span class="error"><c:out value="${errorMessage}"></c:out></span>
+                   <table> <tr> <td> 
+                               Username:</td>
+                           <td><input type="text" name="username" value="" required /></td>
+                       <tr> <td>          </td> <td>    </td></tr>
+                       <tr> <td> Password:</td> <td><input type="password" name="password" value="" required /></td><br>
+                       <br> </br></table><br>
+              
+                       <center><input type="submit" class="button"  name="action" value="Login"/></center>
+               </br>Don't have account?
+              <a href="register.jsp" class="button1">Click here to register!</a>
+               </form>
+                </td>
+                
+                </tr> 
+                <tr>
+                    <td>
+                        <div class="footer">
+                            <center><p>Copyright© 2017 shadibeyah.com .All rights reserved.</p></center>
+</div>
+                    </td>
+                </tr>
+        </table>
+                
+
+    </body>
+</html>

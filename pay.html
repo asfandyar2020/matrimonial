@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+<meta name="viewport" content="width=device-width">
+    <link href="css/pay.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:300px">
+                        <u>&nbsp;  Shadi Beyah &nbsp;</u><br>
+                        <b style="font-size: 10px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+       
+              
+<br><br><br>
+<center><h1>Payment</h1></center>
+<div class="container">
+     <jsp:useBean id="membership" class="bean.User"></jsp:useBean>  
+
+  <form action="index.jsp">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Card Owner</label>
+      </div>
+      <div class="col-75">
+          <input type="text" id="name" name="cardname" placeholder="Card name" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Card Number</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="Card Number: XXXX XXXX XXXX XXXX" required maxlength="19" pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}">
+      <abbr style="color:red" title="Card Number format: XXXX XXXX XXXX XXXX">**</abbr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">CVV</label>
+      </div>
+      <div class="col-75">
+      <input type="password" name="cvvnumber" placeholder="XXXX" required maxlength="4" pattern="[0-9]{4}">
+      <abbr style="color:red" title="CVV format: XXXX">**</abbr>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="date">Expiration date</label>
+      </div>
+      <div class="col">
+        <select id="month" name="month">
+          <option value="January">January</option>
+          <option value="Febraury">Febraury</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="june">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+         <option value="December">December</option>
+        </select>
+      </div>
+        <div class="col">
+        <select id="year" name="year">
+          <option value="2018">2018</option>
+          <option value="March">2019</option>
+          <option value="April">2020</option>
+          <option value="May">2021</option>
+          <option value="june">2022</option>
+        </select>
+      </div>
+    </div>
+    <br><br>
+    <div>
+        <p>By clicking payment is confirmed. Your ad will be posted.</p>
+        <center><button type="button" class="button"><a href="index.jsp">Cancel</a></button>&nbsp; &nbsp; &nbsp;
+            <input type="submit" value="Confirm"></center>
+    </div>
+  </form>
+</div>
+<br><br>
+ <table>
+        <tr>
+                    <td>
+                        <div class="footer">
+                            <center><p>Copyright© 2017 shadibeyah.com .All rights reserved.</p></center>
+</div>
+                    </td>
+                </tr>
+        </table>
+</body>
+</html>

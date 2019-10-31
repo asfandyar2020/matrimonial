@@ -1,0 +1,74 @@
+<!--created by asfund yar -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/home.css" type="text/css" rel="stylesheet">
+        <title>Welcome To Matrimony club</title>
+    </head>
+    <body>
+         <table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:400px">
+                        <u>&nbsp; Matrimonial club &nbsp;</u><br>
+                        <b style="font-size: 20px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+           <center>     
+        <div class="topnav">
+  <a  href="home.html">Home</a>
+   <a  href="userprofile.html">My Profile</a>
+  <a href="lookingfor.html">Looking For</a>
+  <a  href="servicereg.html">Services</a>
+  <a class="active" href="contactreg.html">Contact</a>
+   <a href="searchreg.html">Search</a>
+  <a style="float:right" href="<%= "UserController?action=Logout"%>Logout</a>
+        </div></center><br><br><br>
+
+
+<table>
+    <b><label style="font-size: x-large; font-style:  italic; color: #990000; ">Requested by: Asfund</label><c:out value="${RequestedBy}"/></b><br>
+    <center><h1 style="color: #990066">Best Matches</h1></center>
+
+
+    <form name="MatchForm" method="post" action="RegistrationController">
+        <br><br>
+        <tr><td colspan="2" style="font-size:25px; padding-left: 100px;"><b>Select</b></td>
+            <td style="padding-left:200px;"> <center><input type="submit" class="button" name="sendRequest" value="Send Request"/></center><br></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <c:forEach items="${MatchingList}" var="register"><tr>
+            <tr>
+                <td style=" font-size: 12px; padding-left: 50px"><input type="checkbox" name="candidate" value="${register.memberID}"/></td>
+                <td style=" font-size: 12px; padding-left: 20px"><a href="<%= "RegistrationController?memberid="%><c:out value="${register.memberID}" />"><img style="width: 200px; height: 200px;" src="RetrievePhotoServlet?memberid=<c:out value="${register.memberID}" />&fromPage=Home"/></a></td>
+                <td style=" font-size: 20px; padding-left: 50px">
+            <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required><br>
+                    <label for="uname"><b>Cast</b></label>
+                       <input type="text" placeholder="Enter Cast" name="uname" required><br>
+                   <label for="uname"><b>Maritial status</b></label>
+                       <input type="text" placeholder="Enter status" name="uname" required><br>
+                <label for="uname"><b>Country</b></label>
+                       <input type="text" placeholder="Enter country" name="uname" required><br>
+                
+                </td>
+
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+        </c:forEach>
+</table>
+</form>
+<table>
+    <tr>
+        <td>
+            <div class="footer">
+                <center><p>Copyright© 2017 shadibeyah.com .All rights reserved.</p></center>
+            </div>
+        </td>
+    </tr>
+</table> 
+
+
+</body>
+</html>

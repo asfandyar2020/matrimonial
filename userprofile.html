@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+         <link href="css/profile.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User Profile</title>
+    </head>
+    <body>
+ <table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:400px">
+                        <u>&nbsp;  Shadi Beyah &nbsp;</u><br>
+                        <b style="font-size: 10px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+           <center>     
+        <div class="topnav">
+  <a  href="home.jsp">Home</a>
+  <a  href="<%= "MyProfileController?username="%><c:out value="${username}"/>">My Profile</a>
+  <a href="lookingfor.jsp">Looking For</a>
+  <a  href="servicereg.jsp">Services</a>
+  <a  href="contactreg.jsp">Contact</a>
+   <a href="searchreg.jsp">Search</a>
+  <a style="float:right" href="<%= "UserController?action=Logout"%>">Logout</a>
+        </div></center><br><br><br>
+        <center><section>
+<figure class="fir-image-figure">
+
+    <img style="width: 200px; height: 250px" src="RetrievePhotoServlet?memberid=<c:out value="${register.memberID}"/>"/>
+</figure>
+    </section>
+     <br><br>
+     <a href="home.jsp"> <input type="button" class="button1" value="Go back" /></a>
+      </center>
+       <fieldset><legend>Personal Details</legend>
+          <table border="1" width="1" cellspacing="5" cellpadding="3">
+              <tr>
+                      <td>Member ID:</td>
+                      <td><c:out value="${register.memberID}"/></td>
+              <td></td><td></td>
+                  </tr>   
+              <tr>
+                      <td>First Name:</td>
+                      <td><c:out value="${register.fname}"/></td>
+                       <td>Middle Name:</td>
+                      <td style="padding-right: 100px"><c:out value="${register.mname}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Last Name:</td>
+                      <td><c:out value="${register.lname}"/></td>
+                       <td style="padding-right: 100px">Gender:</td>
+                      <td><c:out value="${register.gender}"/></td>
+                  </tr>
+                 
+                  <tr>
+                      <td>Date of Birth:</td>
+                      <td><c:out value="${register.dob}"/></td>
+                       <td>Marital Status:</td>
+                      <td><c:out value="${register.status}"/></td>
+                  </tr>
+                 
+                  <tr>
+                      <td>Height:</td>
+                      <td><c:out value="${register.height}"/></td>
+                       <td>Country:</td>
+                      <td><c:out value="${register.country}"/></td>
+                  </tr>
+                  <tr>
+                      <td style="padding-right: 100px">City:</td>
+                      <td style="padding-right: 100px"><c:out value="${register.city}"/></td>
+                      <td>Contact:</td>
+                      <td><c:out value="${register.contact}"/></td>
+                  </tr>
+                 
+                  <tr>
+                      <td>Language:</td>
+                      <td><c:out value="${register.lang}"/></td>
+                      <td>Religion:</td>
+                      <td><c:out value="${register.religion}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Caste:</td>
+                      <td><c:out value="${register.caste}"/></td>
+                       <td>Father Name:</td>
+                      <td><c:out value="${register.fatherName}"/></td>
+                  </tr>
+                  
+                  <tr>
+                      <td>Mother Name:</td>
+                      <td><c:out value="${register.motherName}"/></td>
+                      <td>Siblings:</td>
+                      <td><c:out value="${register.sibling}"/></td>
+                  </tr>
+              </table>
+      </fieldset>
+  
+      <fieldset><legend>Personal Qualifications</legend>
+          <table border="1" width="1" cellspacing="5" cellpadding="3">
+                  <tr>
+                      <td>Job Status:</td>
+                      <td><c:out value="${register.jobStatus}"/></td>
+                      <td>Working At:</td>
+                      <td><c:out value="${register.working}"/></td>
+                  </tr>
+                  <tr>
+                      <td style="padding-right: 100px">Designation:</td>
+                      <td style="padding-right: 100px"><c:out value="${register.designation}"/></td>
+                      <td style="padding-right: 100px">Location:</td>
+                      <td style="padding-right: 100px"><c:out value="${register.location}"/></td>
+                  </tr>
+          </table>
+
+      </fieldset>
+    <fieldset><legend>Likings</legend>
+          <table border="1" width="1" cellspacing="5" cellpadding="3">
+                  <tr>
+                      <td style="padding-right: 100px">Hobbies:</td>
+                      <td style="padding-right: 100px"><c:out value="${register.hobbies}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Favourite Music:</td>
+                      <td><c:out value="${register.music}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Favourite Movie:</td>
+                      <td><c:out value="${register.movie}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Favourite Cuisine:</td>
+                      <td><c:out value="${register.cuisines}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Favourite Books:</td>
+                      <td><c:out value="${register.books}"/></td>
+                  </tr>
+                  <tr>
+                      <td>Favourite Place:</td>
+                      <td><c:out value="${register.place}"/></td>
+                  </tr>
+             
+          </table>
+       
+      </fieldset>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/profile.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Looking For</title>
+    </head>
+    <body>
+  <table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:400px">
+                        <u>&nbsp;  Shadi Beyah &nbsp;</u><br>
+                        <b style="font-size: 10px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+          <center>     
+        <div class="topnav">
+  <a  href="home.html">Home</a>
+   <a  href="userprofile.html">My Profile</a>
+  <a href="lookingfor.html">Looking For</a>
+  <a  href="servicereg.html">Services</a>
+  <a class="active" href="contactreg.html">Contact</a>
+   <a href="searchreg.html">Search</a>
+  <a style="float:right" href="<%= "UserController?action=Logout"%>Logout</a>
+        </div></center><br><br><br>
+<form name="LookingForForm" method="post" action="RegistrationController">
+
+
+
+    <table >
+        <th colspan="9" style=" padding-left: 600px; padding-right: 400px">   <h1 style="float: left">Profiles</h1></th>
+        <tr> 
+
+
+            <c:forEach items="${MatchingList}" var="register" varStatus="profile">
+
+                <c:if test="${(profile.index %3) eq 0}">
+                </tr>
+                <tr><td>&nbsp;&nbsp;&nbsp;</td></tr>
+                <tr>
+                </c:if>
+                <td><img width="200" height="200" src="RetrievePhotoServlet?memberid=<c:out value="${register.memberID}/></td>
+
+
+                <td style=" font-size: 12px; padding-left: 40px">
+                    <b>Username:</b> ${register.username}<br><br>
+                    <b>Full Name:</b> ${register.fname} ${register.mname} ${register.lname}<br>
+
+                    <br> <b>Marital:</b> ${register.status}<br>
+                    <br> <b>Religion:</b> ${register.religion}<br>
+                    <br><b> Caste:</b>   ${register.caste}<br>
+                    <br> <b>Contact:</b> ${register.contact}<br>
+                    <br> <b>Date of Birth:</b> ${register.dob}<br>
+                    <br> <b>Country:</b> ${register.country}<br>
+                    <br> <b>Language:</b> ${register.lang}<br>
+                    <br>
+
+                    <c:choose>
+                        <c:when test="${empty register.requestedBy}">
+                            <input type="hidden" name="memberid" value="${register.memberID}" />
+                            <input name="action" type="submit" value="Connect"  />
+                        </c:when>
+                        <c:otherwise>
+                            <input name="action" type="submit" value="Connect" disabled="true" /> 
+                        </c:otherwise>
+                    </c:choose>
+                </td><td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;
+                </td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            </c:forEach> 
+
+        </tr>
+
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div class="footer">
+                    <center><p>Copyright© 2017 matrimonial.com .All rights reserved.</p></center>
+                </div>
+            </td>
+        </tr>
+    </table> 
+</body>
+</html>

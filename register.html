@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/reg.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Registration</title>
+    </head>
+    <body>
+  <table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:400px">
+                        <u>&nbsp;  Shadi Beyah &nbsp;</u><br>
+                        <b style="font-size: 10px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+                <center>     
+        
+    <br><br>
+    <table style=" background-color: #ffffcc">
+    <center> <h2 style="font-style: italic; color: red;">Register For More Features</h2><center>
+            <tr>  <form name="ShadiBeyahRegister" action="RegistrationController" method="post" enctype="multipart/form-data">
+           
+  <div class="container">
+      <p>
+          <span class="success"><c:out value="${errorMessage}"></c:out></span>
+          <input type="text" placeholder="Username" name="username" required>
+          
+      </p>
+    
+    
+    <input type="email" placeholder="Email ID" name="email" required>
+
+    <input type="password" placeholder="Password" name="password" required>
+
+    <input type="text" placeholder="First Name" name="fname" required>
+    
+    <input type="text" placeholder="Middle Name" name="mname" required>
+    
+    <input type="text" placeholder="Last Name" name="lname" required>
+    
+  
+   <fieldset>
+       <legend>Gender</legend>
+   
+       <input type="radio" checked="checked" id="name1" name="gender" value="Male"/><label for="name1">Male</label>
+       <input type="radio"  id="name2" name="gender" value="Female"/><label for="nam2e">Female</label>
+    
+    </fieldset>
+    <br>
+    <fieldset>
+      <label>Date of birth</label> <input type="date" name="dob" required><br><br>
+      <span class="error"><c:out value="${errorAlert}"></c:out></span>
+    </fieldset>
+     <br>
+     <fieldset>
+        
+    <legend>Marital Status</legend>
+   
+    <input type="radio" checked="checked" id="status1" name="status" value="Never Married"/><label for="status1">Never Married</label>
+    <input type="radio"  id="status2" name="status" value="Divorced"/><label for="status2">Divorced</label>
+    <input type="radio"  id="status3" name="status" value="Widowed"/><label for="status3">Widowed</label>
+    
+    </fieldset>
+    
+     <input type="text" placeholder="Height in cm" name="height" required maxlength="3" pattern="[0-9]{3}"><br>
+     <br>
+     <fieldset>
+        
+    <legend>Country Living In</legend>
+   
+    <select required id="country" name="country">
+          <option value="India">India</option>  
+          <option value="Saudi Arabia">KSA</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="UAE">UAE</option>
+          <option value="Australia">Australia</option>
+          <option value="Canada">Canada</option>
+          <option value="USA">USA</option>
+         </select>
+    
+    </fieldset>
+     <br>
+      <fieldset>
+        
+    <legend>City</legend>
+       
+         <select required id="city" name="city">
+          <option value="Delhi">Delhi</option> 
+         <option value="Riyadh">Riyadh</option>
+         <option value="Islamabad">Islamabad</option>
+         <option value="Abu Dhabi">Abu Dhabi</option>
+         <option value="Canberra">Canberra</option>
+         <option value="Ottava">Ottava</option>
+         <option value="Washington">Washington</option>
+        </select>
+    </fieldset>
+     <br>
+   
+        <input type="text" placeholder="Mobile No.: XXXXXXXXXX " name="contact" required maxlength="10">
+    <abbr style="color:red" title="Mobile No. format: XXXXXXXXXX">**</abbr>
+ <fieldset>
+        <legend>Mother Tongue</legend>
+        <select required id="lang" name="lang">
+                                            <option value="Hindi">Hindi</option>
+                                            <option value="English">English</option>
+                                            <option value="Arabic">Arabic</option>
+                                            <option value="Canadian">Canadian</option>
+                                            <option value="Australian">Australian</option>
+                                            <option value="Nil">Nil</option>
+        </select></fieldset>
+  <fieldset>
+        <legend>Religion</legend>
+        <select required id="religion" name="religion">
+                                            <option value="Muslim">Muslim</option>
+                                            <option value="Hindu">Hindu</option>
+                                            <option value="Buddh">Buddh</option>
+                                            <option value="Christian">Christian</option>
+                                            <option value="Jew">Jew</option>
+                                            <option value="Atheist">Atheist</option>
+                                            <option value="Nil">Nil</option>
+        </select></fieldset>
+    <fieldset>
+        <legend>Caste</legend>
+        <select required id="caste" name="caste">
+                                            <option value="OBC">OBC</option>
+                                            <option value="Brahmin">Brahmin</option>
+                                            <option value="Shia">Shia</option>
+                                            <option value="Catholic">Catholic</option>
+                                            <option value="Lebbai">Lebbai</option>
+                                            <option value="Nil">Nil</option>
+        </select></fieldset>
+   
+     <br>
+     <fieldset>
+        
+    <legend>Select Membership Scheme</legend>
+        
+         <input checked="checked" id="monthlyscheme" type="radio" name="membershipFee" value="50"/><label for="monthlyscheme">MONTHLY-$50</label><br><br>
+        <input type="radio" id="yearlyscheme" name="membershipFee" value="500"/><label for="yearlyscheme">YEARLY-$500</label><br><br>
+    </fieldset>
+     <br>
+     <input type="text" id="name" name="cardname" placeholder="Card name">
+     
+   <input type="text" id="cardnumber" name="cardnumber" placeholder="Card Number: XXXXXXXXXXXXXXXX" maxlength="16" pattern="[0-9]{16}">
+      <abbr style="color:red" title="Card Number format: XXXXXXXXXXXXXXXX">**</abbr>
+      
+      <input type="password" name="cvvnumber" placeholder="CVV: XXXX" maxlength="4" pattern="[0-9]{4}">
+      <abbr style="color:red" title="CVV format: XXXX">**</abbr><br><br>
+      <input type="file" name="photo" size="50"/>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" name="action" class="signupbtn" value="Register">Register</button>
+      <span class="success">${messages.success}</span>
+    </div>
+  </div>
+</form>
+        </center>
+    </center>
+            <br><br><br>
+             <table>
+        <tr>
+                    <td>
+                        <div class="footer">
+                            <center><p>Copyright© 2017 shadibeyah.com .All rights reserved.</p></center>
+</div>
+                    </td>
+                </tr>
+        </table>
+   
+            </body>
+</html>

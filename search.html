@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/index.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Search</title>
+    </head>
+    <body>
+ <table>
+            <tr>
+                <td><img src="logo.png" width="230" height="100" alt="ShadiBeyah"/></td>
+                <th> <h1 style="font-style: italic; font-size: 30px; color: darkgoldenrod; padding-left:400px">
+                        <u>&nbsp;  Shadi Beyah &nbsp;</u><br>
+                        <b style="font-size: 10px;"> A Place Where Hearts Meet!</b></h1></th>
+            </tr>
+        </table>
+
+<center>     
+    <div class="topnav">
+        <a  href="index.jsp">Home</a>
+        <a  href="service.jsp">Services</a>
+        <a href="contact.jsp">Contact us</a>
+        <a class="active" href="search.jsp">Search</a>
+    </div></center>
+
+            <table>
+                <tr><td>
+                        <form name="SearchForm" action="SearchController" method="post" style="color:goldenrod">
+
+                            <table  style=" background-color: grey; margin-bottom: 0px"> <tr> <td>
+                                        Select Caste </td>
+                                    <td>
+                                        <select name="selectedcaste">
+                                            <option>Select</option>
+                                            <option>OBC</option>
+                                            <option>Brahmin</option>
+                                            <option>Shia</option>
+                                            <option>Catholic</option>
+                                            <option>Lebbai</option>
+                                            <option>Nil</option>
+                                        </select>
+                                    </td>
+
+                                <br>     
+
+                                <tr> <td> Enter MemberID</td> <td><input type="text" name="memberid" /></td><br>
+                                <br> </br></table><br>
+
+                            <center><input type="submit" class="button" name="search" value="Search"/></center>
+
+
+                        </form>
+                    </td></tr>
+            </table>
+        </td>
+        <td>
+            <table border="1" style=" background-color: #ffffcc; position:absolute; left:400px ;top:250px; 
+            margin-top: 0px"> <c:forEach items="${SearchedList}" var="register">
+
+                    <tr>
+
+                        <td style="padding-right: 100px"><c:out value="${register.fname}"/></td>
+                        <td style="padding-right: 100px"><c:out value="${register.caste}" /></td>
+                        <td style="padding-right: 100px"><c:out value="${register.country}" /></td>
+                        <td style="padding-right: 100px"><c:out value="${register.lang}" /></td>
+                    </tr>
+                </c:forEach></table>
+      
+       <table>
+        <tr>
+                    <td>
+                        <div class="footer">
+                            <center><p>Copyright© 2017 shadibeyah.com .All rights reserved.</p></center>
+</div>
+                    </td>
+                </tr>
+        </table>
+</body>
+</html>
